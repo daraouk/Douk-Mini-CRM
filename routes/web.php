@@ -11,6 +11,26 @@
 |
 */
 
+/* Main Page */
 Route::get('/', function () {
-    return view('welcome');
+	$clients = DB::table('clients')->latest()->get();
+
+    return view('index', compact('clients'));
+});
+
+/* View Client */
+Route::get('client/{id}', function ($id) {
+	$client = DB::table('clients')->find($id);
+
+    return view('client', compact('client'));
+});
+
+/* About */
+Route::get('about', function () {
+    return view('about');
+});
+
+/* Contact */
+Route::get('contact', function () {
+    return view('contact');
 });
