@@ -2,35 +2,46 @@
 
 @section('content')
 
-    <div class="flex-center position-ref full-height">
-            
-        <div class="content">
-            <div class="title m-b-md">
-                Laravel
-            </div>
+    <h2>Add New Customer</h2>
 
-            <div class="links">
-                <a href="https://laravel.com/docs">Documentation</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
-            </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    left side
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-6">
-                    right side
-                    <button type="button" class="btn btn-primary">Test Bootstrap</button>
-                </div>
-            </div>
+    <h4>[Form Goes Here]</h4>
+
+    <h2>View All Customers</h2>
+    <div class="container">
+        <!-- Header Row -->
+        <div class="row">
+            <div class="col-md-1">ID</div>
+            <div class="col-md-1">Name</div>
+            <div class="col-md-1">Company</div>
+            <div class="col-md-2">Phone</div>
+            <div class="col-md-2">E-Mail</div>
+            <div class="col-md-1">Headcount</div>
+            <div class="col-md-1">Monthly Rate</div>
+            <div class="col-md-1">Total Monthly Value</div>
+            <div class="col-md-1">Created On</div>
+            <div class="col-md-1">Updated On</div>
         </div>
 
-        </div>
+        <!-- [Start] Show All Customers -->
+        <?php foreach ($clients as $client) : ?>
+            <div class="row" style="word-wrap: break-word;">
+                <div class="col-md-1">
+                    <a href="{{ url('client/'.$client->id) }}">
+                        {{ $client->id }}
+                    </a>
+                </div>
+                <div class="col-md-1">{{ $client->name }}</div>
+                <div class="col-md-1">{{ $client->company }}</div>
+                <div class="col-md-2">{{ $client->phone }}</div>
+                <div class="col-md-2">{{ $client->email }}</div>
+                <div class="col-md-1">{{ $client->headcount }}</div>
+                <div class="col-md-1">{{ $client->monthly_rate }}</div>
+                <div class="col-md-1">{{ $client->monthly_value }}</div>
+                <div class="col-md-1">{{ $client->created_at }}</div>
+                <div class="col-md-1">{{ $client->updated_at }}</div>
+            </div>
+        <?php endforeach; ?>
+        <!-- [End] Show All Customers -->
     </div>
 
 @endsection

@@ -16,21 +16,21 @@ Route::get('/', function () {
 	$clients = DB::table('clients')->latest()->get();
 
     return view('pages.index', compact('clients'));
-});
+})->name('home');
 
 /* View Client */
 Route::get('client/{id}', function ($id) {
 	$client = DB::table('clients')->find($id);
 
     return view('pages.view', compact('client'));
-});
+})->name('client');
 
 /* About */
 Route::get('about', function () {
     return view('pages.about');
-});
+})->name('about');
 
 /* Contact */
 Route::get('contact', function () {
     return view('pages.contact');
-});
+})->name('contact');
