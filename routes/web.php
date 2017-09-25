@@ -13,7 +13,7 @@
 
 /* Main Page */
 Route::get('/', function () {
-	$clients = DB::table('clients')->latest()->get();
+	$clients = DB::table('clients')->get();
 
     return view('pages.index', compact('clients'));
 })->name('home');
