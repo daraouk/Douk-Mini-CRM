@@ -9,8 +9,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
+        <link href="css/app.css" rel="stylesheet">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -90,7 +90,24 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        left side
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6">
+                        right side
+                        <button type="button" class="btn btn-primary">Test Bootstrap</button>
+                    </div>
+                </div>
+            </div>
+
             </div>
         </div>
+
+        <!-- Scripts -->
+        <script src="js/app.js"></script>
     </body>
 </html>
