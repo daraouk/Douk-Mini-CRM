@@ -15,22 +15,22 @@
 Route::get('/', function () {
 	$clients = DB::table('clients')->latest()->get();
 
-    return view('index', compact('clients'));
+    return view('pages.index', compact('clients'));
 });
 
 /* View Client */
 Route::get('client/{id}', function ($id) {
 	$client = DB::table('clients')->find($id);
 
-    return view('client', compact('client'));
+    return view('pages.view', compact('client'));
 });
 
 /* About */
 Route::get('about', function () {
-    return view('about');
+    return view('pages.about');
 });
 
 /* Contact */
 Route::get('contact', function () {
-    return view('contact');
+    return view('pages.contact');
 });
